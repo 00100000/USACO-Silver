@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.StringTokenizer;
 
 class cownomics {
@@ -19,22 +20,24 @@ class cownomics {
 		String[] plain = new String[n];
 		for (int i = 0; i < n; i++) spotty[i] = br.readLine();
 		for (int i = 0; i < n; i++) plain[i] = br.readLine();
-		// all possible gene combinations
+		// check how many combinations of 3 spotty genes don't overlap
+		// with the genes mapped to seen
 		int valid = 0;
 		for (int i = 0; i < m; i++) {
 			for (int j = i + 1; j < m; j++) {
 				for (int k = j + 1; k < m; k++) {
-					// check if any gene combination from the 3 positions in the spotty or plain
-					// cows are the same
+					HashMap<String, Boolean> seen = new HashMap<String, Boolean>(0);
+					// map all the combinations of 3 plain genes to seen
+					for (int l = 0; l < n; l++) {
+						String check = "" + plain[l].charAt(i) + plain[l].charAt(j) + plain[l].charAt(k);
+						seen.put(check, false);
+					}
 					boolean isValid = true;
 					for (int l = 0; l < n; l++) {
-						for (int o = 0; o < n; o++) {
-							if (spotty[l].charAt(i) == plain[o].charAt(i) &&
-								spotty[l].charAt(j) == plain[o].charAt(j) &&
-								spotty[l].charAt(k) == plain[o].charAt(k)) {
-								isValid = false;
-								break;
-							}
+						String check = "" + spotty[l].charAt(i) + spotty[l].charAt(j) + spotty[l].charAt(k);
+						if (seen.containsKey(check)) {
+							isValid = false;
+							break;
 						}
 					}
 					if (isValid) valid++;
@@ -45,18 +48,5 @@ class cownomics {
 		pw.print(valid);
 		br.close();
 		pw.close();
-	}
-	static int geneIndex(char gene) {
-		switch (gene) {
-			case 'A':
-				return 0;
-			case 'C':
-				return 1;
-			case 'G':
-				return 2;
-			case 'T':
-				return 3;
-		}
-		return -1;
 	}
 }
