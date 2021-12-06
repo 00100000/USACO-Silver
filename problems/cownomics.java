@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.StringTokenizer;
 
 class cownomics {
-	public static void main(String[]args) throws IOException {
+	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader("cownomics.in"));
 		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("cownomics.out")));
 		StringTokenizer st = new StringTokenizer(br.readLine());
