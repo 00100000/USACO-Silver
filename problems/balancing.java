@@ -40,7 +40,6 @@ class balancing {
 		for (int i = 0; i < n; i++) {
 			int x = cow[i].x + 1;
 			// track cows to the left and right of x
-			// also happens to sort them by y position
 			ArrayList<Cow> left = new ArrayList<Cow>(0);
 			ArrayList<Cow> right = new ArrayList<Cow>(0);
 			for (int j = 0; j < n; j++) {
@@ -50,8 +49,8 @@ class balancing {
 					right.add(cow[j]);
 				}
 			}
-			// count the number of cows in each quadrant for each value of y
-			// for each new y, we only need to account for the movements of one cow
+			// count the number of cows in each quadrant
+			// for each new y, we only need to account for the cows between the last y checked and this y
 			int leftIndex = 0, rightIndex = 0;
 			int topL = left.size(), topR = right.size(), botL = 0, botR = 0;
 			for (int j = 0; j < n; j++) {
