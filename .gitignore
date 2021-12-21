@@ -1,0 +1,6 @@
+problems/*
+!problems/*.java
+!problems/*.cpp
+
+# MacOS
+**/.DS_Store
