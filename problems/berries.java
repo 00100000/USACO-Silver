@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-class berries {
+public class berries {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader("berries.in"));
 		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("berries.out")));

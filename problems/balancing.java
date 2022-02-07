@@ -9,8 +9,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.StringTokenizer;
 
-class balancing {
-	static class Cow {
+public class balancing {
+	static public class Cow {
 		int x, y;
 	}
 	public static void main(String[]args) throws IOException {

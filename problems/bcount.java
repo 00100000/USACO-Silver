@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
-class bcount {
+public class bcount {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader("bcount.in"));
 		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("bcount.out")));

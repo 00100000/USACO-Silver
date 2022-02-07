@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-class citystate {
+public class citystate {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader("citystate.in"));
 		PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("citystate.out")));
