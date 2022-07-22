@@ -1,2 +1,2 @@
 # USACO-Silver
-My mediocre solutions to silver problems.
+Competitive programming problem solutions.
